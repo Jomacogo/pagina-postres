@@ -3,7 +3,7 @@
 Landing page desarrollada con React + Vite para la presentación de un emprendimiento de venta de postres.
 
 ## 🚀 Demo
-👉 [(https://elrincondelospostres.netlify.app](https://elrincondelospostres.netlify.app)
+👉 [https://elrincondelospostres.netlify.app](https://elrincondelospostres.netlify.app)
 
 ---
 
