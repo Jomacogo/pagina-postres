@@ -1,4 +1,4 @@
-<img width="1224" height="776" alt="image" src="https://github.com/user-attachments/assets/1e079d59-7fa6-4f2a-8e15-39d7ae6c967d" /># 🍰 Página de Postres
+# 🍰 Página de Postres
 
 Landing page desarrollada con React + Vite para la presentación de un emprendimiento de venta de postres.
 
