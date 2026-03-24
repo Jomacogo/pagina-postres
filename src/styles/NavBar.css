@@ -1,0 +1,115 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.contBoton {
+    display: flex;
+    width: 17vw;
+    height: 15px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 13px;
+}
+
+
+.cont_NavBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background: #a7774e;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.menu {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    
+}
+
+.boton-barra:hover {
+    color: #f9f2df;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.logo {
+    height: 60px;
+    width: auto;
+    margin: 0;
+}
+
+/* icono hamburguesa */
+.menu-icon {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+
+/* dirigirse a las secciones */
+#descripcion{
+  scroll-margin-top: 100px; /* altura del navbar */
+}
+
+#contactanos{
+  scroll-margin-top: 100px; /* altura del navbar */
+}
+
+#productos{
+  scroll-margin-top: 100px; /* altura del navbar */
+}
+
+
+
+/* Responsivo */
+
+@media (max-width: 600px) {
+
+    .menu {
+        position: absolute;
+        top: 65px;
+        right: 0;
+        background: #f9f2df;
+        flex-direction: column;
+        width: 200px;
+        padding: 20px;
+        user-select: none;
+        display: none;
+        border: 2.5px solid black;
+        border-radius: 5%;
+    }
+
+    .menu-icon {
+    display :block;
+    font-size: 24px;
+    cursor: pointer;
+    user-select: none;
+}
+
+    .menu.activo {
+        display: flex;
+        cursor: pointer;
+        
+    }
+
+    .menu.icon {
+        display: block;
+        user-select: none;
+        cursor: pointer;
+    }
+
+    .contBoton {
+        width: 200px;
+    }
+
+}

@@ -1,0 +1,18 @@
+.url-whatsapp {
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.url-whatsapp a {
+    text-decoration: none;
+    font-size: 1.5em;
+    color: #075E54;
+}
+
+.url-whatsapp img {
+    width: 30px;
+    align-items: center;
+    justify-content: center;
+}
