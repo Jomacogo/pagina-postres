@@ -38,6 +38,7 @@ Fue desarrollado con el objetivo de practicar y mejorar habilidades en desarroll
 
 src/
 ├── assets/ # Imágenes y recursos estáticos
+
 │ ├── hero.png
 │ ├── Logo-Rincon-postres.jpg
 │ ├── Postres.png
