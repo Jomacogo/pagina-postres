@@ -48,7 +48,7 @@ src/
 │ │ ├── Producto.jsx
 │ │ └── UrlWhatsApp.jsx
 │ │
-│ ├── sections/ # Secciones principales de la página
+│ ├── sections/ # Secciones principales
 │ │ ├── Hero.jsx
 │ │ ├── Products.jsx
 │ │ └── Contacts.jsx
@@ -56,7 +56,7 @@ src/
 │ └── ui/ # Componentes reutilizables
 │ └── BotonesBarra.jsx
 │
-├── styles/ # Archivos de estilos CSS
+├── styles/ # Archivos CSS
 │ ├── App.css
 │ ├── NavBar.css
 │ ├── Hero.css
@@ -67,7 +67,6 @@ src/
 ├── App.jsx # Componente principal
 ├── main.jsx # Punto de entrada
 └── index.css # Estilos globales
-
 ## 📸 Preview
 
 <img width="1226" height="850" alt="Foto" src="https://github.com/user-attachments/assets/6ef0e37e-030a-406f-b4c9-63dded7074c1" />
