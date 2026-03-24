@@ -1,6 +1,6 @@
 import React from 'react'
 import Producto from '../layout/producto'
-import fotoNapoleon from "../../assets/Postres.jpeg"
+import fotoNapoleon from "../../assets/Postres.png"
 
 function Products() {
 

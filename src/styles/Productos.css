@@ -3,6 +3,12 @@ a {
     align-items: center;
 }
 
+.foto-producto {
+    border-radius: 50%;
+    height: 60%;
+    width: auto;
+}
+
 .cont-products {
     display: flex;
     background-color: #d49762;
@@ -20,7 +26,6 @@ a {
 
 .cont-products img {
     object-fit: contain;
-    width: 150px;
 }
 .productos {
     display: grid;
@@ -33,6 +38,8 @@ a {
     .cont-products {
         width: 90%;
     }
+
+    
 }
 
 @media (max-width: 530px) {
