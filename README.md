@@ -27,7 +27,7 @@ Fue desarrollado con el objetivo de practicar y mejorar habilidades en desarroll
 ## 📌 Características
 
 - Diseño responsive 📱
-- Navbar fija (sticky)
+- Navbar fija
 - Sección de productos organizada en grid
 - Integración con WhatsApp para contacto
 - Estructura de proyecto escalable
