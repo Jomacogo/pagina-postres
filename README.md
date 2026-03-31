@@ -99,8 +99,9 @@ src/
 
 ## 📸 Preview
 
-<img width="1226" height="850" alt="Foto" src="https://github.com/user-attachments/assets/6ef0e37e-030a-406f-b4c9-63dded7074c1" />
-<img width="1224" height="776" alt="Foto pagina" src="https://github.com/user-attachments/assets/e2a6fd11-5185-49fa-8944-8caef1343689" />
+<img width="1263" height="882" alt="postres-1" src="https://github.com/user-attachments/assets/6fa340a2-0a8a-4deb-9027-9b9c3be25cf4" />
+<img width="1262" height="729" alt="postres-2" src="https://github.com/user-attachments/assets/8b60c6e2-2ac9-4141-8c8c-bd4a42bedfed" />
+<img width="1266" height="888" alt="postres-3" src="https://github.com/user-attachments/assets/6eb867a9-9706-43e6-a3be-cc48dd3589cb" />
 
 ---
 
