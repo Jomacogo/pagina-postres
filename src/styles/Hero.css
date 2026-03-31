@@ -1,4 +1,161 @@
-.descripcion {
-  padding: 2px 5px;
-  margin: 2px 5px;
+/* ============================================
+   ESTILOS DE LA SECCIÓN HERO
+   
+   La sección principal de bienvenida con:
+   - Imagen de fondo a pantalla completa
+   - Overlay oscuro semitransparente
+   - Contenido centrado con animación fade-in
+   - Botón CTA (Call to Action)
+   ============================================ */
+
+/* --- Contenedor principal del hero --- */
+.hero {
+  position: relative;
+  width: 100%;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* --- Imagen de fondo --- */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* --- Capa oscura sobre la imagen para legibilidad --- */
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(61, 43, 31, 0.82) 0%,
+    rgba(92, 51, 23, 0.7) 50%,
+    rgba(139, 94, 60, 0.65) 100%
+  );
+  z-index: 1;
+}
+
+/* --- Contenido del hero (texto + CTA) --- */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  max-width: 700px;
+  padding: var(--space-lg);
+
+  /* Animación de entrada: aparece desde abajo */
+  animation: heroFadeIn 1s ease-out;
+}
+
+/* --- Badge superior (ej: "🍰 Postres Artesanales") --- */
+.hero-badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(8px);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: 50px;
+  color: var(--color-gold);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+  margin-bottom: var(--space-md);
+  border: 1px solid rgba(212, 165, 74, 0.3);
+}
+
+/* --- Título principal del hero --- */
+.hero-title {
+  font-family: var(--font-heading);
+  font-size: clamp(2.5rem, 6vw, 4rem);
+  color: var(--color-warm-white);
+  margin-bottom: var(--space-md);
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  line-height: 1.1;
+}
+
+/* --- Descripción del emprendimiento --- */
+.hero-description {
+  color: rgba(253, 246, 236, 0.9);
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  line-height: 1.8;
+  margin-bottom: var(--space-md);
+  font-weight: 300;
+}
+
+/* --- Detalles (ubicación, tipo de pedido) --- */
+.hero-details {
+  display: flex;
+  justify-content: center;
+  gap: var(--space-md);
+  flex-wrap: wrap;
+  margin-bottom: var(--space-lg);
+}
+
+.hero-details span {
+  color: rgba(253, 246, 236, 0.8);
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+
+/* --- Botón CTA (Call to Action) --- */
+.hero-cta {
+  display: inline-block;
+  padding: var(--space-sm) var(--space-lg);
+  background: linear-gradient(135deg, var(--color-caramel), var(--color-gold));
+  color: white;
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  border-radius: 50px;
+  box-shadow: 0 4px 20px rgba(196, 129, 61, 0.4);
+  transition: all var(--transition-base);
+  text-transform: uppercase;
+}
+
+.hero-cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(196, 129, 61, 0.5);
+  color: white;
+}
+
+/* --- Animación de entrada del contenido --- */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ============================================
+   RESPONSIVE — Ajustes para móvil
+   ============================================ */
+@media (max-width: 600px) {
+  .hero {
+    min-height: 75vh;
+  }
+
+  .hero-content {
+    padding: var(--space-md);
+  }
+
+  .hero-details {
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
 }

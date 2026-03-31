@@ -1,115 +1,176 @@
-html {
-    scroll-behavior: smooth;
-}
+/* ============================================
+   ESTILOS DEL NAVBAR
+   
+   Barra de navegación principal con:
+   - Logo a la izquierda
+   - Links de navegación a la derecha
+   - Menú hamburguesa en móvil con animación
+   - Efecto glassmorphism (fondo semitransparente)
+   ============================================ */
 
-.contBoton {
-    display: flex;
-    width: 17vw;
-    height: 15px;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    border-radius: 10px;
-    font-size: 13px;
-}
-
-
+/* --- Contenedor principal de la barra --- */
 .cont_NavBar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 20px;
-    background: #a7774e;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) var(--space-md);
+  background: rgba(139, 94, 60, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: var(--shadow-md);
+  transition: background var(--transition-base);
 }
 
-.menu {
-    display: flex;
-    gap: 20px;
-    list-style: none;
-    
-}
-
-.boton-barra:hover {
-    color: #f9f2df;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-}
-
+/* --- Logo --- */
 .logo {
-    height: 60px;
-    width: auto;
-    margin: 0;
+  height: 55px;
+  width: auto;
+  border-radius: var(--radius-sm);
+  transition: transform var(--transition-base);
 }
 
-/* icono hamburguesa */
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* --- Menú de navegación (desktop) --- */
+.nav-menu {
+  display: flex;
+  gap: var(--space-xs);
+  list-style: none;
+  align-items: center;
+}
+
+/* --- Links individuales del nav --- */
+.nav-link {
+  display: inline-block;
+  padding: var(--space-xs) var(--space-sm);
+  color: var(--color-cream);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-fast);
+  position: relative;
+}
+
+/* Línea animada debajo del link al hacer hover */
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--color-gold);
+  border-radius: 1px;
+  transition: width var(--transition-base);
+}
+
+.nav-link:hover {
+  color: var(--color-gold);
+}
+
+.nav-link:hover::after {
+  width: 60%;
+}
+
+/* --- Ícono hamburguesa (solo visible en móvil) --- */
 .menu-icon {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+/* Tres líneas del ícono hamburguesa */
+.menu-icon span {
+  display: block;
+  width: 26px;
+  height: 3px;
+  background-color: var(--color-cream);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+/* Animación: hamburguesa → X cuando está abierto */
+.menu-icon.abierto span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+}
+
+.menu-icon.abierto span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.menu-icon.abierto span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* --- Scroll margin para que los anchors no queden
+      tapados por la barra sticky --- */
+#descripcion,
+#productos,
+#contactanos {
+  scroll-margin-top: 90px;
+}
+
+/* ============================================
+   RESPONSIVE — Pantallas menores a 768px
+   El menú se convierte en un desplegable vertical
+   ============================================ */
+@media (max-width: 768px) {
+  /* Mostrar ícono hamburguesa */
+  .menu-icon {
+    display: flex;
+  }
+
+  /* Menú oculto por defecto, se desliza desde arriba */
+  .nav-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(139, 94, 60, 0.98);
+    backdrop-filter: blur(10px);
+    flex-direction: column;
+    padding: var(--space-md);
+    gap: var(--space-xs);
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: all var(--transition-base);
+    box-shadow: var(--shadow-lg);
+  }
+
+  /* Menú visible cuando tiene la clase .activo */
+  .nav-menu.activo {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-sm);
+    font-size: 1rem;
+  }
+
+  .nav-link::after {
     display: none;
-    font-size: 24px;
-    cursor: pointer;
-    user-select: none;
-}
+  }
 
-
-/* dirigirse a las secciones */
-#descripcion{
-  scroll-margin-top: 100px; /* altura del navbar */
-}
-
-#contactanos{
-  scroll-margin-top: 100px; /* altura del navbar */
-}
-
-#productos{
-  scroll-margin-top: 100px; /* altura del navbar */
-}
-
-
-
-/* Responsivo */
-
-@media (max-width: 600px) {
-
-    .menu {
-        position: absolute;
-        top: 65px;
-        right: 0;
-        background: #f9f2df;
-        flex-direction: column;
-        width: 200px;
-        padding: 20px;
-        user-select: none;
-        display: none;
-        border: 2.5px solid black;
-        border-radius: 5%;
-    }
-
-    .menu-icon {
-    display :block;
-    font-size: 24px;
-    cursor: pointer;
-    user-select: none;
-}
-
-    .menu.activo {
-        display: flex;
-        cursor: pointer;
-        
-    }
-
-    .menu.icon {
-        display: block;
-        user-select: none;
-        cursor: pointer;
-    }
-
-    .contBoton {
-        width: 200px;
-    }
-
+  .nav-link:hover {
+    background: rgba(255, 255, 255, 0.1);
+  }
 }

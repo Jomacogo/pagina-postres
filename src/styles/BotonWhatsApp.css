@@ -1,18 +1,65 @@
-.url-whatsapp {
-    padding: 10px;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
+/* ============================================
+   ESTILOS DEL BOTÓN DE WHATSAPP
+   
+   Dos variantes:
+   1. whatsapp-inline: Botón dentro de la sección de contacto
+   2. whatsapp-flotante: Botón fijo en la esquina inferior derecha
+      (siempre visible mientras el usuario navega la página)
+   ============================================ */
+
+/* --- Botón inline (dentro de la sección de contacto) --- */
+.whatsapp-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  background-color: #25D366;
+  color: white;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  transition: all var(--transition-base);
+  box-shadow: 0 2px 10px rgba(37, 211, 102, 0.3);
 }
 
-.url-whatsapp a {
-    text-decoration: none;
-    font-size: 1.5em;
-    color: #075E54;
+.whatsapp-inline:hover {
+  background-color: #1da851;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  color: white;
 }
 
-.url-whatsapp img {
-    width: 30px;
-    align-items: center;
-    justify-content: center;
+/* --- Botón flotante (esquina inferior derecha, siempre visible) --- */
+.whatsapp-flotante {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 60px;
+  height: 60px;
+  background-color: #25D366;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+  z-index: 999;
+  transition: all var(--transition-base);
+
+  /* Animación sutil de pulso para llamar la atención */
+  animation: whatsappPulse 2s infinite;
+}
+
+.whatsapp-flotante:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 30px rgba(37, 211, 102, 0.5);
+  color: white;
+}
+
+/* Animación de pulso — llama la atención del visitante */
+@keyframes whatsappPulse {
+  0% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
+  50% { box-shadow: 0 4px 30px rgba(37, 211, 102, 0.6), 0 0 0 10px rgba(37, 211, 102, 0.1); }
+  100% { box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4); }
 }

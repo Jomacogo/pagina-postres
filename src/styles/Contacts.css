@@ -1,59 +1,168 @@
-* {
-    margin: 0;
-    padding: 0;
+/* ============================================
+   ESTILOS DE LA SECCIÓN DE CONTACTO Y FOOTER
+   
+   Estructura:
+   - Header con título
+   - Grid de 3 cards (Quiénes Somos, Contacto, Redes)
+   - Footer con copyright
+   
+   Paleta: fondo oscuro (chocolate) con cards claras
+   para crear contraste visual elegante.
+   ============================================ */
+
+/* --- Header de la sección --- */
+.contact-header {
+  background: var(--color-chocolate);
+  padding: var(--space-xl) 0 var(--space-sm);
 }
 
-.contenedor-principal {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    justify-content: center;
-    align-content: center;
-    padding: 10px 0 ;
-    background-color: #d49762;
-
+.contact-header .section-title {
+  color: var(--color-cream);
 }
 
-.instagram {
-    color: #e1306c;
+/* Línea decorativa dorada debajo del título */
+.contact-header .section-title::after {
+  background: linear-gradient(90deg, var(--color-gold), var(--color-caramel));
 }
 
-.tiktok {
-    color: #000;
+/* --- Grid principal de contacto (3 columnas) --- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-md);
+  padding-top: var(--space-lg);
+  padding-bottom: var(--space-xl);
+  background: var(--color-chocolate);
 }
 
-.contenedor {
-    background-color: #d49762;
-    display: flex;
-    align-items: center;
-    text-align: center;
-    justify-content: flex-start;
-    width: 30vw;
-    height: 100%;
-    border-radius: 10px;
-    flex-direction: column;
-    margin-left: 15px;
+/* --- Card individual de contacto --- */
+.contact-card {
+  background: var(--color-warm-white);
+  border-radius: var(--radius-md);
+  padding: var(--space-lg);
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  transition: transform var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-sm);
 }
 
-.contenedor a{
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
+.contact-card:hover {
+  transform: translateY(-4px);
 }
 
+/* Ícono decorativo grande (emoji) */
+.contact-card__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-xs);
+}
 
+/* Título de cada card */
+.contact-card__title {
+  font-family: var(--font-heading);
+  font-size: 1.4rem;
+  color: var(--color-chocolate);
+}
+
+/* Texto dentro de las cards */
+.contact-card p {
+  color: var(--color-text-light);
+  font-size: 0.95rem;
+  line-height: 1.7;
+}
+
+/* --- Teléfonos de contacto --- */
+.contact-card__phones {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: var(--space-xs);
+}
+
+.contact-card__phone-label {
+  font-size: 0.85rem;
+  color: var(--color-text-light);
+}
+
+/* Links de teléfono clickeables */
+.contact-card__phone {
+  color: var(--color-mocha);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+
+.contact-card__phone:hover {
+  color: var(--color-caramel);
+}
+
+/* --- Links de redes sociales --- */
+.social-links {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-sm);
+  margin-top: var(--space-xs);
+  width: 100%;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xs);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.95rem;
+  transition: all var(--transition-base);
+}
+
+/* Botón de Instagram */
+.social-link--instagram {
+  background: linear-gradient(135deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: white;
+}
+
+.social-link--instagram:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(225, 48, 108, 0.4);
+  color: white;
+}
+
+/* Botón de TikTok */
+.social-link--tiktok {
+  background: linear-gradient(135deg, #25F4EE, #FE2C55, #000000);
+  color: white;
+}
+
+.social-link--tiktok:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(254, 44, 85, 0.4);
+  color: white;
+}
+
+/* --- Footer inferior con copyright --- */
+.footer-bottom {
+  background: #3D2B1F;
+  padding: var(--space-md);
+  text-align: center;
+}
+
+.footer-bottom p {
+  color: rgba(253, 246, 236, 0.6);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+
+/* ============================================
+   RESPONSIVE — Pantallas menores a 850px
+   Las cards se apilan en una sola columna
+   ============================================ */
 @media (max-width: 850px) {
-    .contenedor-principal {
-        grid-template-columns: 1fr;
-        gap: 20px;
-    }
-
-    .contenedor {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 90vw;
-        margin: 2vw;
-        height: 80%;
-    }
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-md);
+  }
 }
-

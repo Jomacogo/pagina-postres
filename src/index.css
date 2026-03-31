@@ -1,0 +1,139 @@
+/* ============================================
+   SISTEMA DE DISEÑO GLOBAL
+   El Rincón de los Postres
+   
+   Este archivo define las variables CSS globales,
+   el reset base y los estilos de tipografía que se
+   aplican a toda la página.
+   ============================================ */
+
+/* --- Variables de diseño (paleta, tipografía, espaciado) --- */
+:root {
+  /* Paleta de colores — derivada del logo vintage marrón/crema */
+  --color-cream: #FDF6EC;
+  --color-warm-white: #FFF9F0;
+  --color-caramel: #C4813D;
+  --color-caramel-light: #D4944F;
+  --color-chocolate: #5C3317;
+  --color-mocha: #8B5E3C;
+  --color-gold: #D4A54A;
+  --color-soft-pink: #F2D7D0;
+  --color-text: #3D2B1F;
+  --color-text-light: #7A6555;
+
+  /* Tipografía */
+  --font-heading: 'Playfair Display', Georgia, serif;
+  --font-body: 'Lato', 'Segoe UI', sans-serif;
+
+  /* Espaciado consistente */
+  --space-xs: 0.5rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2.5rem;
+  --space-xl: 4rem;
+  --space-2xl: 6rem;
+
+  /* Bordes y sombras */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --shadow-sm: 0 2px 8px rgba(61, 43, 31, 0.08);
+  --shadow-md: 0 4px 16px rgba(61, 43, 31, 0.12);
+  --shadow-lg: 0 8px 32px rgba(61, 43, 31, 0.16);
+  --shadow-hover: 0 12px 40px rgba(61, 43, 31, 0.2);
+
+  /* Transiciones */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
+}
+
+/* --- Reset CSS limpio --- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* --- Scroll suave para toda la página --- */
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --- Estilos base del cuerpo --- */
+body {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-cream);
+}
+
+/* --- Tipografía base --- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.2;
+  color: var(--color-chocolate);
+}
+
+h1 { font-size: clamp(2rem, 5vw, 3.5rem); }
+h2 { font-size: clamp(1.5rem, 3.5vw, 2.5rem); }
+h3 { font-size: clamp(1.2rem, 2.5vw, 1.75rem); }
+
+p {
+  font-family: var(--font-body);
+  line-height: 1.7;
+  color: var(--color-text);
+}
+
+/* --- Links globales --- */
+a {
+  text-decoration: none;
+  color: var(--color-caramel);
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-gold);
+}
+
+/* --- Imágenes responsivas --- */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* --- Utilidad: contenedor centrado con ancho máximo --- */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+/* --- Título de sección reutilizable --- */
+.section-title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--color-chocolate);
+  margin-bottom: var(--space-lg);
+  position: relative;
+}
+
+/* Línea decorativa debajo de los títulos de sección */
+.section-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--color-caramel), var(--color-gold));
+  margin: var(--space-xs) auto 0;
+  border-radius: 2px;
+}
