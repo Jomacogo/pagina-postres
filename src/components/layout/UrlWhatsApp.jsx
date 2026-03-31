@@ -16,11 +16,11 @@ import '../../styles/BotonWhatsApp.css'
  *             si es false/undefined, se muestra como botón inline
  */
 function UrlWhatsApp({ flotante = false }) {
-  /* Número de WhatsApp del negocio (sin espacios ni guiones) */
-  const telefono = '573506864194'
-
-  /* Mensaje predefinido que se envía al abrir el chat */
-  const mensaje = 'Hola, me gustaría más información sobre los postres de El Rincón de los Postres 🍰'
+  /* Número y mensaje se leen del archivo .env
+     Las variables deben tener el prefijo VITE_ para que
+     Vite las exponga al código del cliente */
+  const telefono = import.meta.env.VITE_WHATSAPP_TELEFONO
+  const mensaje = import.meta.env.VITE_WHATSAPP_MENSAJE
 
   /* Codificar el mensaje para incluirlo en la URL */
   const mensajeCodificado = encodeURIComponent(mensaje)

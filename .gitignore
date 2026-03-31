@@ -1,4 +1,24 @@
-# Logs
+# ============================================
+# ARCHIVOS IGNORADOS POR GIT
+# El Rincón de los Postres
+#
+# Estos archivos/carpetas NO se suben a GitHub.
+# ============================================
+
+# --- Dependencias ---
+node_modules
+
+# --- Build de producción ---
+dist
+dist-ssr
+
+# --- Variables de entorno (datos privados) ---
+.env
+.env.local
+.env.production
+*.local
+
+# --- Logs ---
 logs
 *.log
 npm-debug.log*
@@ -7,18 +27,16 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-
-# Editor directories and files
+# --- Editores e IDEs ---
 .vscode/*
 !.vscode/extensions.json
 .idea
-.DS_Store
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
 *.sw?
+
+# --- Sistema operativo ---
+.DS_Store
+Thumbs.db
